@@ -1,25 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
+  const [ip, setIp] = useState('?');
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+      (async () => {
+          try {
+              const response = await fetch('https://api.ipify.org?format=json');
+              const data = await response.json();
+              setIp(data.ip);
+              setIsVisible(false);
+          } catch (error) {
+              console.error('Error fetching IP:', error);
+              setIp("?");
+              setIsVisible(true);
+          }
+      })();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+        <header className="App-header">
+          <h1>My IP address is</h1>
+        </header>
+        <main>
+          {ip ? <p className="ip-address">{ip}</p> : <p className="ip-address loading">Loading...</p>}
+          {isVisible && <p className="error hide">Sorry, failed to find IP information.</p>}
+        </main>
+      </div>
   );
 }
 
