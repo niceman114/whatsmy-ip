@@ -7,6 +7,8 @@ const TRACKING_ID = 'G-YLXZK5F931';
 ReactGA.initialize(TRACKING_ID);
 
 function App() {
+  ReactGA.pageview(window.location.pathname);
+
   const [ip, setIp] = useState('?');
   const [isVisible, setIsVisible] = useState(false);
   const eventTracker = GA('Visited');
