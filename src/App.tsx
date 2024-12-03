@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import ReactGA from 'react-ga4';
-import GA from './GA';
+// import GA from './GA';
 
 const TRACKING_ID = 'G-YLXZK5F931';
 ReactGA.initialize(TRACKING_ID);
