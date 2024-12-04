@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "WhatsMyIP",
+  "name": "What's My IP",
   "icons": [
     {
       "src": "favicon.ico",
