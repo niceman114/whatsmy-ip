@@ -36,7 +36,13 @@ h1 {
 }
 
 .ip-address.loading {
-  color: #f6da95;
+  width: 150px;
+  color: #fff;
+  text-align: left;
+  background-image: url('/public/loading-bar.svg');
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .ip-address:hover {
@@ -51,6 +57,7 @@ h1 {
   h1 {
     font-size: 2.5em;
   }
+
   .ip-address {
     font-size: 1.8em;
   }
