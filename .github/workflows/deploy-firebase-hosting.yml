@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Install Yarn
+        run: npm install -g yarn
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
